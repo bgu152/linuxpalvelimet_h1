@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tehtävä 1b</title>
 
+    <link href="../styles.css" rel="stylesheet">
+
     <style>
         tr:nth-child(even){
             background:#CCC;
@@ -19,55 +21,54 @@
         }
     </style>
 
+
 </head>
 <body>
-    <h1>Tehtävä 1b - Raudan listaaminen</h1>
-    <p>Päivämäärä: 22.1.2022 <br>
-    Opiskelija: Erik Ramm-Schmidt</p>
-
-    <p>Kokeilin lshw komentoa Debian virtuaalikoneen komentotulkissa. Se ei onnistunut, komentotulkki ei tunnustanut komentoa. Googlasin ongelman ja asensin lshw (sudo apt-get install lswh).</p>
-
-    <p>Tämän jälkeen yritin uudestaan, kirjoitin komentotulkkiin sudo lshw -short -sanitize. Se onnistui, ja sain seuraavan tulosteen</p>
-    <img src="images-1b/capture1.PNG" alt="">
-
-    <h2>Vastauksen tulkitseminen</h2>
-    <p>Minulla oli todella vaikea ymmärtää tulosteen tekstiä. Googlasin jokaisen rivin avainsanat, mutta aika paljon jäi vielä epäselväksi. Alla on 
-        käyn läpi tulosteen rivi riviltä: 
-    </p>
-
-    <table border="1" style="border-collapse: collapse;">
-        <thead>
-            <th>Rivi</th>
-            <th>Yritys ymmärtää tulostusriviä</th>
-        </thead>
-        <tbody>
-            <tr><td>/0/ memory 128KiB BIOS</td> <td>En ole varma, ehkä virtuaalikoneen BIOS:in muisti.</td>
-            </tr>
-            <tr><td>/0/ memory  8GiB System memory</td><td>Virtualikoneella on 8GB muistia</td></tr>
-            <tr><td>/0/ processor Intel(R) Core(TM) i7-10700K CPU @ 3.</td><td>Virtuaalikone on tunnistanut prosessorin oikein. Koneessa on intelin i7 prosessori.</td></tr>
-            <tr><td>/0/100 bridge 440FX - 82441FX PMC [Natoma]</td> <td>Tämä on viittaus Intelin piirisarjaan</td></tr>
-            <tr><td>/0/100/1 bridge 82371SB PIIX3 ISA [Natoma/Triton II]</td><td>Tämä on viittaus Intelin piirisarjaan</td></tr>
-            <tr><td>/0/100/1.1 scsi1 storage 82371AB/EB/MB PIIX4 IDE</td><td>Myös tämä on viittaus Intelin teknologioihin.</td></tr>
-            <tr><td>/0/100/1.1/0.0.0 /dev/cdrom disk CD-ROM</td><td>En ole varma, mahdollisesti viittaus virtuaaliseen CD-ROM asemaan.</td></tr>
-            <tr><td>/0/100/1.1/0.0.0/0 /dev/cdrom disk</td><td>En ole varma, mahdollisesti viittaus virtuaaliseen CD-ROM asemaan.</td></tr>
-            <tr><td>/0/100/2 display SVGA II Adapter</td><td>Mahdollisesti virtuaalinen näytönohjain</td></tr>
-            <tr><td>/0/100/3 enp0s3 network 82540EM Gigabit Ethernet Controller</td><td>Mahdollisesti internetyhteys</td></tr>
-            <tr><td>/0/100/4 generic VirtualBox Guest Service</td><td>Mahdollisesti Virtualboxin virtuaalinen CD-ROM jossa on ajureita</td></tr>
-            <tr><td>/0/100/5 multimedia  82801AA AC'97 Audio Controller</td><td>Intelin äänentoistoteknologia</td></tr>
-            <tr><td>/0/100/6 bus KeyLargo/Intrepid USB</td><td>Ei tietoa, liittyy tod. USB-teknologioihin</td></tr>
-            <tr><td>/0/100/6/1 usb1 bus OHCI PCI host controller</td><td>Ei tietoa, liittyy tod. USB-teknologioihin</td></tr>
-            <tr><td>/0/100/6 bus KeyLargo/Intrepid USB</td><td>Ei tietoa, liittyy tod. USB-teknologioihin</td></tr>
-            <tr><td>/0/100/6/1 usb1 bus OHCI PCI host controller</td><td>Ei tietoa, liittyy tod. USB-teknologioihin</td></tr>
-            <tr><td>/0/100/6/1/1 input USB Tablet</td><td>Ei tietoa, liittyy tod. USB-teknologioihin</td></tr>
-            <tr><td>0/100/7 bridge 82371AB/EB/MB PIIX4 ACPI</td><td>Myös tämä on viittaus Intelin teknologioihin.</td></tr>
-            <tr><td>/0/100/d scsi2 storage 82801HM/HEM (ICH8M/ICH8M-E) SATA Con</td><td>Myös tämä on viittaus Intelin teknologioihin.</td></tr>
-            <tr><td>/0/100/d/0.0.0 /dev/sda disk 12GB VBOX HARDDISK</td><td>Virtuaalikoneella on 12GB:n kovalevy</td></tr>
-            <tr><td>/0/100/d/0.0.0/1 /dev/sda1 volume 11GiB EXT4 volume</td><td>Uskon että virtuaalikoneen näkökulmasta sillä on 11GB talletustilaa.</td></tr>
-            <tr><td>/0/3 input PnP device PNP0303</td><td>PnP viittaa "Plug-and-Play" laitteeseen. Mahdollisesti hiiri tai näppäimistö.</td></tr>
-            <tr><td>/0/4 input PnP device PNP0f03</td><td>PnP viittaa "Plug-and-Play" laitteeseen. Mahdollisesti hiiri tai näppäimistö.</td></tr>
-
-        </tbody>
-    </table>
+    <div class="body-content">
+        <script id="replace_with_navbar" src="nav.js"></script>
+        <h1>Tehtävä 1b - Raudan listaaminen</h1>
+        <p>Päivämäärä: 22.1.2022 <br>
+        Opiskelija: Erik Ramm-Schmidt</p>
+        <p>Kokeilin lshw komentoa Debian virtuaalikoneen komentotulkissa. Se ei onnistunut, komentotulkki ei tunnustanut komentoa. Googlasin ongelman ja asensin lshw (sudo apt-get install lswh).</p>
+        <p>Tämän jälkeen yritin uudestaan, kirjoitin komentotulkkiin sudo lshw -short -sanitize. Se onnistui, ja sain seuraavan tulosteen</p>
+        <img src="images-1b/capture1.PNG" alt="">
+        <h2>Vastauksen tulkitseminen</h2>
+        <p>Minulla oli todella vaikea ymmärtää tulosteen tekstiä. Googlasin jokaisen rivin avainsanat, mutta aika paljon jäi vielä epäselväksi. Alla on
+            käyn läpi tulosteen rivi riviltä:
+        </p>
+        <table border="1" style="border-collapse: collapse;">
+            <thead>
+                <th>Rivi</th>
+                <th>Yritys ymmärtää tulostusriviä</th>
+            </thead>
+            <tbody>
+                <tr><td>/0/ memory 128KiB BIOS</td> <td>En ole varma, ehkä virtuaalikoneen BIOS:in muisti.</td>
+                </tr>
+                <tr><td>/0/ memory  8GiB System memory</td><td>Virtualikoneella on 8GB muistia</td></tr>
+                <tr><td>/0/ processor Intel(R) Core(TM) i7-10700K CPU @ 3.</td><td>Virtuaalikone on tunnistanut prosessorin oikein. Koneessa on intelin i7 prosessori.</td></tr>
+                <tr><td>/0/100 bridge 440FX - 82441FX PMC [Natoma]</td> <td>Tämä on viittaus Intelin piirisarjaan</td></tr>
+                <tr><td>/0/100/1 bridge 82371SB PIIX3 ISA [Natoma/Triton II]</td><td>Tämä on viittaus Intelin piirisarjaan</td></tr>
+                <tr><td>/0/100/1.1 scsi1 storage 82371AB/EB/MB PIIX4 IDE</td><td>Myös tämä on viittaus Intelin teknologioihin.</td></tr>
+                <tr><td>/0/100/1.1/0.0.0 /dev/cdrom disk CD-ROM</td><td>En ole varma, mahdollisesti viittaus virtuaaliseen CD-ROM asemaan.</td></tr>
+                <tr><td>/0/100/1.1/0.0.0/0 /dev/cdrom disk</td><td>En ole varma, mahdollisesti viittaus virtuaaliseen CD-ROM asemaan.</td></tr>
+                <tr><td>/0/100/2 display SVGA II Adapter</td><td>Mahdollisesti virtuaalinen näytönohjain</td></tr>
+                <tr><td>/0/100/3 enp0s3 network 82540EM Gigabit Ethernet Controller</td><td>Mahdollisesti internetyhteys</td></tr>
+                <tr><td>/0/100/4 generic VirtualBox Guest Service</td><td>Mahdollisesti Virtualboxin virtuaalinen CD-ROM jossa on ajureita</td></tr>
+                <tr><td>/0/100/5 multimedia  82801AA AC'97 Audio Controller</td><td>Intelin äänentoistoteknologia</td></tr>
+                <tr><td>/0/100/6 bus KeyLargo/Intrepid USB</td><td>Ei tietoa, liittyy tod. USB-teknologioihin</td></tr>
+                <tr><td>/0/100/6/1 usb1 bus OHCI PCI host controller</td><td>Ei tietoa, liittyy tod. USB-teknologioihin</td></tr>
+                <tr><td>/0/100/6 bus KeyLargo/Intrepid USB</td><td>Ei tietoa, liittyy tod. USB-teknologioihin</td></tr>
+                <tr><td>/0/100/6/1 usb1 bus OHCI PCI host controller</td><td>Ei tietoa, liittyy tod. USB-teknologioihin</td></tr>
+                <tr><td>/0/100/6/1/1 input USB Tablet</td><td>Ei tietoa, liittyy tod. USB-teknologioihin</td></tr>
+                <tr><td>0/100/7 bridge 82371AB/EB/MB PIIX4 ACPI</td><td>Myös tämä on viittaus Intelin teknologioihin.</td></tr>
+                <tr><td>/0/100/d scsi2 storage 82801HM/HEM (ICH8M/ICH8M-E) SATA Con</td><td>Myös tämä on viittaus Intelin teknologioihin.</td></tr>
+                <tr><td>/0/100/d/0.0.0 /dev/sda disk 12GB VBOX HARDDISK</td><td>Virtuaalikoneella on 12GB:n kovalevy</td></tr>
+                <tr><td>/0/100/d/0.0.0/1 /dev/sda1 volume 11GiB EXT4 volume</td><td>Uskon että virtuaalikoneen näkökulmasta sillä on 11GB talletustilaa.</td></tr>
+                <tr><td>/0/3 input PnP device PNP0303</td><td>PnP viittaa "Plug-and-Play" laitteeseen. Mahdollisesti hiiri tai näppäimistö.</td></tr>
+                <tr><td>/0/4 input PnP device PNP0f03</td><td>PnP viittaa "Plug-and-Play" laitteeseen. Mahdollisesti hiiri tai näppäimistö.</td></tr>
+            </tbody>
+        </table>
+    </div>
     
     
 </body>

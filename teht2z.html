@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä 2z</title>
+    <link href="../styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="body-content">
+        <script id="replace_with_navbar" src="../nav.js"></script>
+        <h1>Tehtävä 2z - Tiivistelmä kahdesta artikkelista</h1>
+        <h2>Artikkeli: Command Line Basics Revisited</h2>
+        <i>
+            <p>Alla on tiivistelmä Tero Karvisen artikkelista <a href="https://terokarvinen.com/2020/command-line-basics-revisited">"Command Line Basics Revisited"</a>.</p>
+        </i>
+
+        <p>Linuxin komentotulkki on vanhempi kuin itse Linux ja Internet. Se on nopea ja tehokas työkalu tietokoneen hallintaan. Alla on lista tavallisista ja hyödyllisistä komentotulkin komennoista</p>
+        
+        <h4>Liikkuminen hakemistopuussa ja lukeminen</h4>
+        <table>
+            <thead>
+                <th>Komento</th>
+                <th>Käyttö</th>
+            </thead>
+            <tbody>
+                <tr><td>pwd</td><td>Print Workin Directory - kertoo mikä on tämänhetkinen työkansio</td></tr>
+                <tr><td>ls </td><td> listaa aktiivisen kansion tiedostot ja kansiot</td></tr>
+                <tr><td>cd [kansion nimi]/ </td><td>muuttaa työkansion sen alikansioon </td></tr>
+                <tr><td>cd .. </td><td>Näyttää tekstitiedoston tero.txt sisällön. Välilynti näyttää seuraavan sivun, b näyttää edellisen sivun, kenoviivalla "/" etsitään, "q" :lla lopetetaan. </td></tr>
+                <tr><td>less tero.txt </td><td> </td></tr>
+                <tr><td> ls /etc|less</td><td> less-pääte muuttaa komennon tulostuksen siten että nähdään yksi sivu kerralla </td></tr>
+
+
+            </tbody>
+        </table>
+        <h4>Tiedostomanipulointi</h4>
+        <table>
+            <thead>
+                <th>Komento</th>
+                <th>Käyttö</th>
+            </thead>
+            <tbody>
+                <tr><td> nano F00.TXT</td><td> avataan F00.TXT tiedostoa tekstieditorilla nano</td></tr>
+                <tr><td>mkdir NEWFOLDER  </td><td>luo kansion NEWFOLDER </td></tr>
+                <tr><td> mv OLDNAME NEWNAME </td><td>siirtää tiedoston tai kansion tai muuttaa sen nimeä. 
+                    Jos molemmat parametrit ovat tiedostoja, NEWNAME kirjoitetaan yli.
+                    Jos NEWNAME on kansio, OLDNAME siirty sinne.</td></tr>
+                <tr><td> cp -r ORIGINAL COPY</td><td> kopioi ORIGINALin COPY kansioon. Merkit "-r" tarkoittaa rekursiivinen</td></tr>
+                <tr><td> rmdir EMPTYDIR</td><td>poistaa tyhjän kansion </td></tr>
+                <tr><td> rm JUNK</td><td>poistaa tiedoston JUNK </td></tr>
+                <tr><td> rm -r FOLDEROFJUNK</td><td> poistaa kansion jossa voi olla sisältöä</td></tr>
+
+
+            </tbody>
+        </table>
+        <h4>SSH-etäyhteydet</h4>
+        <table>
+            <thead>
+                <th>Komento</th>
+                <th>Käyttö</th>
+            </thead>
+            <tbody>
+                <tr><td>ssh tero@example.com </td><td>avaa komentotulkin turvallisella etäyhteydellä. Käyttäjänimi on tero, serveri on example.com </td></tr>
+                <tr><td>remotecomputer$ exit </td><td>kirjautuu ulos etäkoneesta </td></tr>
+                <tr><td>scp -r FOLDER tero@example.com:public_html/ </td><td>kopioi turvallisesti kansion omasta koneesta etäkoneeseen </td></tr>
+            </tbody>
+        </table>
+        <h4>APU KOMENTOTULKIN KÄYTÖSSÄ</h4>
+        <table>
+            <thead>
+                <th>Komento</th>
+                <th>Käyttö</th>
+            </thead>
+            <tbody>
+                <tr><td> man ls </td><td> antaa manuaalin komennolle ls</td></tr>
+                <tr><td> ls --help</td><td> apua komennon ls käytössä</td></tr>
+                <tr><td>wget -h </td><td>apua komennon wget käytössä </td></tr>
+            </tbody>
+        </table>
+        <h4>HISTORIA JA ARVAAMINEN</h4>
+        <table>
+            <thead>
+                <th>Komento</th>
+                <th>Käyttö</th>
+            </thead>
+            <tbody>
+                <tr><td> ls /etc/re[tab][tab] <br> reportbug.conf  resolvconf/</td><td>painamalla tabulaattoria kaksi kertaa saadan komennon jatkomahdollisuudet
+                </td></tr>
+                <tr><td>ls /etc/resolv.[tab]  => ls /etc/resolv.conf </td><td> tabulaattori kirjoittaa komennon loppuun jos sen jatko on yksiselitteinen</td></tr>
+                <tr><td> history </td><td> näyttää komentohistorian</td></tr>
+            </tbody>
+        </table>
+        <h4>TÄRKEÄT TIEDOSTOT</h4>
+        <table>
+            <thead>
+                <th>Tiedosto</th>
+                <th>Merkitys</th>
+            </thead>
+            <tbody>
+                <tr><td> / <br> reportbug.conf  resolvconf/</td><td>Root, juurikansio, kansiopuun huippu. Kaikki kansiot ovat root kansion alikansioita
+                </td></tr>
+                <tr><td>/home/ </td><td> kaikkien käyttäjien kotikansiot ovat tässä</td></tr>
+                <tr><td> /home/erik/ </td><td> Käyttäjän "erik" kotikansio</td></tr>
+                <tr><td> /etc/</td><td>Järjestelmäasetukset ovat tässä kansiossa </td></tr>
+                <tr><td> /media/</td><td>Kytkettävät mediat kuten /media/usbdisk </td></tr>
+                <tr><td> /var/log/</td><td> Järjestelmän logit ovat tässä kansiossa</td></tr>
+            </tbody>
+        </table>
+        <h4>ADMINKOMENNOT</h4>
+        <table>
+            <thead>
+                <th>Komento</th>
+                <th>Käyttö</th>
+            </thead>
+            <tbody>
+                <tr><td> sudo apt-get update</td><td>päivittää listan saatavilla olevista paketeista </td></tr>
+                <tr><td>apt-cache search [hakusanat] </td><td>etsi ohjelmaa </td></tr>
+                <tr><td>sudo apt-get -y install [ohjelman nimi] </td><td> asentaa ohjelman</td></tr>
+                <tr><td>dpkg --listfiles nethack-console => /usr/lib/games/nethack</td><td> etsi komentokehotetta jolla käynnistetään nethack. Näyttää olevan "nethack"</td></tr>
+                <tr><td>sudo apt-get purge nethack  </td><td>poistaa ohjelman nethack</td></tr>
+                <tr><td>sudo apt-get -y install krita blender vlc tree httpie curl tmux python3-py </td><td> asentaa monta ohjelmaa samanaikaisesti</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Artikkeli: An Introduction To Data Science On The Linux Command Line</h2>
+        <i>
+            <p>Alla on tiivistelmä Robert Elderin artikkelista  <a href="https://blog.robertelder.org/data-science-linux-command-line/">"An Introduction To Data Science On The Linux Command Line"</a>.</p>
+        </i>
+
+        <p>Alla on otanta linuxin kommennoista joista voi olla hyötyä data-analyysissä.</p>
+
+        <table>
+            <thead>
+                <th>Komento</th>
+                <th>Käyttö</th>
+            </thead>
+            <tbody>
+                <tr><td> grep </td><td> Voi löytää samanlaisia tekstipätkiä tiedostoista </td></tr>
+                <tr><td> sed </td><td> Voi tehdä etsi ja korvaus - operaatioita </td></tr>
+                <tr><td>  awk </td><td> Voi tehdä edistyneitä etsi ja korvaus - operaatioita </td></tr>
+                <tr><td>sort</td><td> Lajittelu </td></tr>
+                <tr><td>tsort</td><td> Topologinen lajittelu </td></tr>
+                <tr><td> comm</td><td> Joukko-operaatioita </td></tr>
+                <tr><td> uniq </td><td> Voi tutkia yksikäsitteisyyttä </td></tr>
+                <tr><td> cat </td><td> Liitosoperaatiot </td></tr> 
+                <tr><td> head</td><td> Tiedoston ensimmäisten rivien tulostaminen </td></tr>    
+                <tr><td> tail</td><td> Tiedoston viimeisten rivien tulostaminen </td></tr>    
+                <tr><td> wc</td><td> Sanojen laskeminen </td></tr>    
+                <tr><td> find</td><td> Etsintäoperaatiot </td></tr>                                    
+            </tbody>
+        </table>
+
+        <h2>Lähteet</h2>
+        <ol>
+            <li> "Command Line Basics Revisited." <cite>Karvinen, Tero</cite>, https://terokarvinen.com/2020/command-line-basics-revisited/. Luettu 27.1.2022.</li>
+            <li>"An Introduction To Data Science On The Linux Command Line." </li> <cite>Robert Elder</cite>, 16.10.2019, https://blog.robertelder.org/data-science-linux-command-line/. Luettu 27.1.2022.
+        </ol>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä 2c</title>
+    <link href="../styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="body-content">
+        <script id="replace_with_navbar" src="../nav.js"></script>
+        <h1>Tehtävä 2c - Lokirivit</h1>
+        <p>Tässä tehtävässä yritin aiheuttaa merkinnän lokitiedostoon onnistuneesta ja epäonnistuneesta tapahtumasta</p>
+        <h2>Onnistunut tapahtuma</h2>
+        <p>Navigoin komentotulkissa kansioon <b>/var/log/</b> ja avasin logitiedoston komennolla <b>less syslog</b>.
+            Katselin lokia ja huomasin että siinä oli merkintöjä jotka viittasivat kuvankaappauksiin. Tein
+            kuvankaappauksen ja avasin lokitiedoston uudestaan. Siinä oli nyt seuraavat merkinnät:</p>
+        <p>
+            Jan 30 13:17:08 debian dbus-daemon[492]: [system] Activating via systemd: service
+            name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.85'
+            (uid=1000 pid=4383 comm="xfce4-screenshooter ") <br>
+            Jan 30 13:17:08 debian systemd[1]: Starting Hostname Service...<br>
+            Jan 30 13:17:08 debian dbus-daemon[492]: [system] Successfully activated service
+            'org.freedesktop.hostname1'<br>
+            Jan 30 13:17:08 debian systemd[1]: Started Hostname Service.<br>
+            Jan 30 13:17:38 debian systemd[1]: systemd-hostnamed.service: Succeeded.
+        </p>
+
+        <p>
+            Googlasin avainsanoja ja alla on selvitykseni logiriveistä
+        </p>
+
+        <table>
+            <thead>
+                <th>Lokiteksti</th>
+                <th>Analyysi</th>
+            </thead>
+            <tbody>
+                <tr><td>debian dbus-daemon</td><td>Kirjasto joka tarjoaa kommunikaation kahden applikaation välillä</td></tr>
+                <tr><td>systemd</td><td>Ohjelma joka käynnistää ohjelmia ja aloittaa lokitietojen keruun</td></tr>
+                <tr><td>xfce4-screenshooter</td><td>Tämä on applikaatio joilla otetaan kuvankaappauksia</td></tr>
+            </tbody>
+        </table>
+        <p>  En löytänyt selitystä kaikille lokitiedoston merkinnöille, mutta ymmärtäisen sen niin, että systemd käynnistää kuvankaappausohjelman ja lokinkerjuun.</p>
+
+        <h2>Virheilmoitus lokiin</h2>
+
+        <p>Yritin luoda virheilmoituksen lokiin kirjautumalla <b>sudo su</b> komennon jälkeen väärällä salasanalla. Mitään merkintöjä ei kuitenkaan lokiin ilmestynyt. En keksinyt muuta tapaa luoda virheilmoituksia.</p>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä 2a</title>
+    <link href="../styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="body-content">
+        <script id="replace_with_navbar" src="../nav.js"></script>
+
+
+        <h1>Tehtävä 2d - grep komennon esimerkkejä</h1>
+
+        <p>Kirjoitin <b>man grep</b> komentotulkkiin, kopioin tulosteen ja säästin sen <b>man_grep.txt</b> tekstitiedostoon.</p>
+
+        <p>Kirjoitin <b>grep "command" man_grep.txt</b> komentotulkkiin. Sain seuraavan tulosteen.</p>
+        <p>is used in a shell command. <br>
+            coming from file LABEL.  This can be useful  for  commands  that<br>
+            newlines.  This option can  be  used  with  commands  like  find<br>
+            terminal driver interprets some of it as commands.  On the other<br>
+            are on the command line.  This is equivalent to the -r option.<br>
+            Skip  any  command-line file with a name suffix that matches the<br>
+            Skip any command-line directory with a name suffix that  matches<br>
+            symbolic  links only if they are on the command line.  Note that<br>
+            with commands like sort -z to process arbitrary file names.</p>
+        <p>Komento palautti kaikki rivit jossa oli kirjainyhdistelmä "command". Huomatkaa, että myös rivit jossa oli "commands" on mukana.</p>
+
+        <p>Kirjoitin <b>grep -w "command" man_grep.txt</b> komentotulkkiin. Sain seuraavan tulosteen.</p>
+        <p>is used in a shell command.
+            are on the command line.  This is equivalent to the -r option.<br>
+            Skip  any  command-line file with a name suffix that matches the<br>
+            Skip any command-line directory with a name suffix that  matches<br>
+            symbolic  links only if they are on the command line.  Note that</p>
+
+            <p>Komento palautti kaikki rivit jossa oli sana "command". Huomatkaa, että myös rivit jossa oli "commands" eivät ole mukana.</p>
+
+    </div>
+
+
+</body>
+
+</html>
