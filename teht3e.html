@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä 3e</title>
+
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <script id="replace_with_navbar" src="nav.js"></script>
+    <h1>Tehtävä 3e - Vaihda Apachen esimerkkisivu</h1>
+    <p>8.2.2022</p>
+    <p>klo 13.21</p>
+    <p>Kirjoitin komentotulkkiin <b>cd /var/www/html/</b></p>
+    <p>klo 13.22</p>
+    <p>Kirjoitin komentotulkkiin cat index.html. Sain Apachen esimerkkisivun html koodin tulosteena: </p>
+    <xmp>
+        <!DOCTYPE html
+            PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        jne…
+    </xmp>
+    <p>13.25</p>
+    <p>Kirjoitin komentotulkkiin <b>sudo nano index.html</b>. Tämä avasi html koodin nanossa.</p>
+    <p>klo 13.28</p>
+    <p>Haluasin poistaa kaiken sisällön index.html:ssä nanossa. En tiedä miten sen tekisi. <b>Ctrl+A</b> ei näytä
+        valitsevan kaikkea. Googlailun jälkeen näyttää siltä että se ei onnistu.</p>
+    <p>klo 13.30</p>
+    <p>
+        Suljin nanon. <br>
+        Kirjoitin komentotulkkiin <b>sudo micro index.html</b> <br>
+        Tämän jälkeen: <b>ctrl + A </b>ja <b>delete</b> <br>
+        Nyt poistui sisältö <b>index.html</b> tiedostosta
+    </p>
+    <p>klo 13.33</p>
+    <p>Liitin microon seuraavan html koodin komennolla <b>ctrl+V</b>: </p>
+    <xmp>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        </head>
+        <body>
+        <h1>Hello</h1>
+        
+        </body>
+        </html>
+    </xmp>
+    <p>klo 13.35</p>
+    <p>Säästin muutokset microssa painamalla <b>ctrl + S</b>. Suljin micron komennolla <b>ctrl+Q</b>. </p>
+    <p>klo 13.36</p>
+    <p>Avasin apachen komennolla <b>sudo systemctl start apache2</b></p>
+    <p>klo 13.37</p>
+    <p>
+        Kirjoitin komennon <b>firefox localhost</b><br>
+        Selaimessa näkyi sivusto
+        <img style="display: block;" src="images-3e/hello.png" alt=""/>
+    </p>
+    
+
+
+    
+
+
+</body>
+
+</html>

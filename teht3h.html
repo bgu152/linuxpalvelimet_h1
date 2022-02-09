@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä 3h</title>
+
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <script id="replace_with_navbar" src="nav.js"></script>
+    <h1>Tehtävä 3h - phpMyAdminin asentaminen</h1>
+    <p>23.50 6.2.2022</p>
+    <p>Kirjoitin <b>sudo apt-get install phpmyadmin</b> komentotulkkiin ja painoin enter. Komentokenttään ilmestyi
+        asennus-wizardi. Valitsin ensimmäiseksi
+        että serveri on apache2</p>
+    <img src="images-3h/configuring-phpmyadmin.PNG" alt="">
+    <p>22.52</p>
+    <p>Seuraavaksi valitsin yes</p>
+    <img src="images-3h/configuring-phpmyadmin2.PNG" alt="">
+    <p>Seuraavaksi valitsin Unix socket. En oiken tiennyt mikä oli valinnan idea</p>
+    <img src="images-3h/configuring-phpmyadmin3.PNG" alt="">
+    <img src="images-3h/configuring-phpmyadmin3.PNG" alt="">
+    <p>Seuraavaksi valitaan mahdollisesti salausmenetelmä, en ole aivan varma</p>
+    <img src="images-3h/configuring-phpmyadmin4.PNG" alt="">
+    <p>Seuraavaksi käyttäjätunnuksia ja salasanoja</p>
+    <img src="images-3h/configuring-phpmyadmin5.PNG" alt="">
+    <img src="images-3h/configuring-phpmyadmin6.PNG" alt="">
+    <img src="images-3h/configuring-phpmyadmin7salsana.PNG" alt="">
+    <p>22.54 </p>
+    <p>Virheilmoitus, jotakin oli mennyt väärin.</p>
+    <img src="images-3h/configuring-phpmyadmin8virheilmo.PNG" alt="">
+    <p>22.59</p>
+    <p>Tein uudistuksen siten, että laitoin ensin apache2:n pois päältä komennolla <b>sudo sevice apache2 stop</b>.
+        Lopputulos oli kuitenkin sama.</p>
+    <p>23.25</p>
+    <p>Olen googlannut virheilmoituksen mutta en ole vielä löytänyt vastausta. Mietin että voisiko olla niin että debian
+        tietokoneesta puuttuu MySQL serveri, nimittäin yllä oleva ilmoitus herjaa siitä että se ei pysty yhdistämään
+        MySQL serveriin</p>
+
+    <p>23.47</p>
+    <p>Yritin asentaa mySQL <a
+            href="https://www.digitalocean.com/community/tutorials/how-to-install-the-latest-mysql-on-debian-10">näiden
+            ohjeiden mukaisesti</a>. Se ei kuitenkaan onnistunut.</p>
+
+        <h4>Lähteet</h4>
+        <p>“How To Install the Latest MySQL on Debian 10.” DigitalOcean, 25 July 2019, https://www.digitalocean.com/community/tutorials/how-to-install-the-latest-mysql-on-debian-10. Accessed 8 February 2022.</p>
+
+</body>
+
+</html>

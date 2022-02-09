@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä 3a</title>
+    
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <script id="replace_with_navbar" src="nav.js"></script> 
+        <h1>Tehtävä 3a - Apachen asennusraportti</h1>
+        
+        <p>Asennus tehtiin su 6.2.2022</p>
+        <p> klo 20.20</p>
+        <p>Olin jo asentanut Apachen luennolla joten jotta voisin tehdä tämän tehtävän minun piti ensin poistaa
+            vanhan asennuksen. Tämä oli pikkaisen haastavaa, koska en tiennyt miten ohjelmia poistetaan linux koneelta.
+            Etsin netistä apua, mutta ensimmäiset yritykset eivät onnistuneet. Lopulta löysin ohjeet <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjtk47A3Ov1AhVMBBAIHZCiAzIQFnoECBMQAQ&url=https%3A%2F%2Faskubuntu.com%2Fquestions%2F176964%2Fpermanently-removing-apache2&usg=AOvVaw0ciGGkQ3aB1bYefcqNRTXI">keskustelufoorumilta</a> ja sain Apachen poistettua. 
+        </p>
+
+        <p>20.46</p>
+        <p>Kirjoitin komentotulkkiin <b>sudo apt-get update</b> ja annoin sudo salasanan.</p>
+        <p>Kirjoitin komentotulkkiin sudo apt-get install apache2</p>
+        <p>Tuli paljon syötettä joka viittasi siihen, että jotain asennettiin.</p>
+        <p>20.50</p>
+        <p>Kirjoitin komentotulkkiin <b>sudo systemctl start apache2</b>, koska se piti muistiinpanojeni mukaan käynnistää apache2 ohjelman. Komentotulkki ei tulostanut mitään.</p>
+        <p>Kirjoitin komentotulkkiin <b>curl localhost</b> koska se oli muistiinpanoissani. Tulos oli että komentotulkki tulosti pitkän liuskan html:ää.</p>
+
+        <p>20.52</p>
+        <p>Kirjoitin komentotulkkiin <b>firefox localhost</b>. Tämä avasi selaimen ja näytölle tuli apachen info sivu.</p>
+        <img src="images-3a/apache-aloitussivu.png" alt="">
+
+        <h4>Lähteet</h4>
+        Permanently removing apache2.” Ask Ubuntu, https://askubuntu.com/questions/176964/permanently-removing-apache2. Accessed 8 February 2022.
+
+    
+</body>
+</html>
