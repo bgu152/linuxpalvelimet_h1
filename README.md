@@ -1,2 +1,2 @@
 # linuxpalvelimet_h1
-# toimii
+# luotu windowsissa ja linuxessa
