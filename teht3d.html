@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä 3d</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <script id="replace_with_navbar" src="nav.js"></script>
+    <h1>Tehtävä 3d - Tutki apachen lokeja</h1>
+    <p><b>Pvm: 14.3.2022</b></p>
+    <p>
+        Luin virhelokit kuten <a
+            href="https://terokarvinen.com/2016/new-default-website-with-apache2-show-your-homepage-at-top-of-example-com-no-tilde/">Karvisen
+            ohjeissa</a>.
+    </p>
+    <p class="code">
+        erik@last:~$ sudo cat /var/log/apache2/error.log
+    </p>
+    <p class="code">
+        [Mon Mar 14 13:09:36.717722 2022] [mpm_event:notice] [pid 13349:tid 139906561858880] AH00489: Apache/2.4.52
+        (Debian) configured -- resuming normal operations<br>
+        [Mon Mar 14 13:09:36.718271 2022] [core:notice] [pid 13349:tid 139906561858880] AH00094: Command line:
+        '/usr/sbin/apache2'<br>
+        [Mon Mar 14 13:18:20.474490 2022] [mpm_event:notice] [pid 13349:tid 139906561858880] AH00492: caught SIGWINCH,
+        shutting down gracefully<br>
+        [Mon Mar 14 13:18:20.511087 2022] [mpm_event:notice] [pid 13567:tid 140042020863296] AH00489: Apache/2.4.52
+        (Debian) configured -- resuming normal operations<br>
+        [Mon Mar 14 13:18:20.511149 2022] [core:notice] [pid 13567:tid 140042020863296] AH00094: Command line:
+        '/usr/sbin/apache2'<br>
+        [Mon Mar 14 13:22:28.889528 2022] [mpm_event:notice] [pid 13567:tid 140042020863296] AH00492: caught SIGWINCH,
+        shutting down gracefully<br>
+        [Mon Mar 14 13:22:28.926207 2022] [mpm_event:notice] [pid 13654:tid 140445322558784] AH00489: Apache/2.4.52
+        (Debian) configured -- resuming normal operations<br>
+        [Mon Mar 14 13:22:28.926276 2022] [core:notice] [pid 13654:tid 140445322558784] AH00094: Command line:
+        '/usr/sbin/apache2'<br>
+
+    </p>
+
+    <p>
+        En löytänyt mitään kiinnostaavaa sieltä, vaikutti siltä että sinne oli logattu apachen käynnistymiset.
+    </p>
+    <p>
+        Olin tehnyt kotisivun joka näkyy osoitteessa localhost <a href="teht3b.html">tehtävässä 3b</a>. Poistin
+        tiedoston index.htm.
+
+    </p>
+    <p>
+        Yritin avata sivun localhost, se ei tietenkään onnistunut
+    </p>
+    <img src="./images-3d/3d1.png">
+    <p>
+        Katson lokitiedoston loppua
+
+    </p>
+    <p class="code">
+        [Mon Mar 14 14:01:50.954395 2022] [autoindex:error] [pid 13656:tid 140445136930560] [client 127.0.0.1:43104]
+        AH01276: Cannot serve directory /home/erik/public_html/: No matching DirectoryIndex
+        (index.html,index.cgi,index.pl,index.php,index.xhtml,index.htm) found, and server-generated directory index
+        forbidden by Options directive
+
+    </p>
+    <p>Sinne oli ilmennyt virhe joka kertoi että resurssi mitä haettiin ei ollut olemassa.
+    </p>
+    <h3>Lähteet</h3>
+    <cite>Karvinen, Tero. “New Default Website with Apache2 – Show your homepage at top of example.com, no tilde.” Tero
+        Karvinen, 16 February 2016,
+        https://terokarvinen.com/2016/new-default-website-with-apache2-show-your-homepage-at-top-of-example-com-no-tilde/.
+        Accessed 14 March 2022.</cite>
+
+</body>
+
+</html>

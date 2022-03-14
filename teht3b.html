@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <script id="replace_with_navbar" src="nav.js"></script>
+    <h1>Laita käyttäjien kotisivut toimimaan</h1>
+    <p><b>Pvm: 14.3.2022</b></p>
+    <h3>Tehtävän tarkoitus</h3>
+    <p>Tehtävän tarkoitus on tehdä yksinkertainen kotisivun joka pyörii Apachella</p>
+    <h3>Tehtävän eteneminen</h3>
+
+    <p>Seurasin Tero Karvisen ohjeet joita löysin osoitteesta: <a
+            href="https://terokarvinen.com/2016/new-default-website-with-apache2-show-your-homepage-at-top-of-example-com-no-tilde/">https://terokarvinen.com/2016/new-default-website-with-apache2-show-your-homepage-at-top-of-example-com-no-tilde/</a>
+    </p>
+
+    <p>Aluksi asensin ja käynnistin Apachen</p>
+    <p class="code">erik@last:~$ sudo apt-get -y install apache2 <br>
+        erik@last:~$ systemctl start apache2.service
+    </p>
+    <p>
+        Apachen oletussivu näkyy osoitteessa localhost
+    </p>
+    <img src="./images-3b/3b1.png"></img>
+    <p>Loin kotisivujen .conf tiedoston omalle etusivulle apachen sivuasetuskansioon
+    </p>
+    <p class="code">
+        erik@last:~$ sudoedit /etc/apache2/sites-available/erik.conf</p>
+    <p class="code">
+        erik@last:~$ cat /etc/apache2/sites-available/erik.conf<br>
+        &#60;VirtualHost *:80&#62;<br>
+        DocumentRoot /home/erik/public_html/<br>
+        &#60;Directory /home/erik/public_html/&#62;<br>
+        Require all granted<br>
+        &#60;/Directory&#62;<br>
+        &#60;/VirtualHost&#62;<br>
+    </p>
+    <p>
+        Deaktivoin apachen oletussivun ja aktivoin oman kotisivuni.
+
+    </p>
+    <p class="code">
+        sudo a2ensite erik.conf<br>
+        sudo a2dissite 000-default.conf
+    </p>
+    <p>Loin kotisivun</p>
+    <p class="code">
+        erik@last:~/public_html$ cat index.html<br>
+        &#60;!DOCTYPE html&#62;<br>
+        &#60;html lang="en"&#62;<br>
+        <br>
+        &#60;head&#62;<br>
+        &#60;meta charset="UTF-8"&#62;<br>
+        &#60;meta http-equiv="X-UA-Compatible" content="IE=edge"&#62;<br>
+        &#60;meta name="viewport" content="width=device-width, initial-scale=1.0"&#62;<br>
+        &#60;title&#62;Erik's homepage&#60;/title&#62;<br>
+        &#60;&#47; head &#62;<br>
+        <br>
+        &#60;body&#62;<br>
+        &#60;h1&#62;Hello, this is my homepage &#60;&#47; h1 &#62;<br>
+        &#60; &#47; body &#62;<br>
+        <br>
+        &#60;&#47; html&#62;<br>
+        <br>
+    </p>
+    <p>
+        Kuva näkyi nyt osoitteessa localhost
+    </p>
+    <img src="./images-3b/3b2.png">
+    <h3>Lähteet</h3>
+    <cite>Karvinen, Tero. “New Default Website with Apache2 – Show your homepage at top of example.com, no tilde.” Tero
+        Karvinen, 16 February 2016,
+        https://terokarvinen.com/2016/new-default-website-with-apache2-show-your-homepage-at-top-of-example-com-no-tilde/.
+        Accessed 14 March 2022.</cite>
+</body>
+
+</html>
